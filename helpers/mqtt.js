@@ -1,5 +1,5 @@
 const mqtt = require("mqtt");
-
+const { postPosition } = require("../controllers/position");
 const objectValues = {
   0: "lat",
   1: "lng",
@@ -27,4 +27,6 @@ mqtClient.on("message", function (topic, message) {
 
   global.io.emit("GPS", object);
   console.log(object);
+
+  postPosition(object);
 });

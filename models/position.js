@@ -21,4 +21,4 @@ const Position = global.sequelize.define(
   }
 );
 
-module.export = Position;
+module.exports = Position;
